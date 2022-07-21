@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import agent from '../agent'
 import { connect } from 'react-redux'
 import { ITEM_FAVORITED, ITEM_UNFAVORITED } from '../constants/actionTypes'
-import placehoder from '../../../public/placeholder.png';
 
 const mapDispatchToProps = (dispatch) => ({
   favorite: (slug) =>
@@ -37,7 +36,7 @@ const ItemPreview = (props) => {
     >
       <img
         alt="item"
-        src={item.image || placehoder}
+        src={item.image || '/placeholder.png'}
         className="card-img-top item-img"
         style={{ borderRadius: '20px' }}
       />
