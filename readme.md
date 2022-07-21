@@ -10,4 +10,37 @@ When implementing a new feature or fixing a bug, please create a new pull reques
 
 ## First setup
 
-**[TODO 05/01/2018 @vanessa-cooper]:** _It's been a while since anyone ran a fresh copy of this repo. I think it's worth documenting the steps needed to install and run the repo on a new machine?_
+#### Backend setup
+- Clone this repo
+<br>
+- Install [Docker](https://docs.docker.com/get-docker/) for your machine if you don't already have it installed.
+<br>
+- To confirm if you have docker installed, run the following command in your terminal:
+
+  ```bash
+    docker -v && docker-compose -v
+  ```
+- In your terminal, navigate into the cloned project folder.
+  <br>
+- You need to start up docker to run the backend of this application, you can do that my running the following command from the project root directory to load Anythink's backend and frontend:
+  ```bash
+  docker-compose up
+  ```
+
+* Running the above command will automatically start the backend of the application, wait for docker to complete pulling the right images. You should see the following in your terminal if the backend server started successfully
+  ![](backend-server.png)
+
+* Navigate to [ http://localhost:3000/api/ping]( http://localhost:3000/api/ping) to test backend.
+
+#### Frontend Setup
+
+- In a different terminal tab, navigate into the frontend folder and run the following command:
+  ```bash
+  yarn install
+  ```
+- The above will install all the required dependencies for the frontend to run. To start the frontend server, run the following command:
+  ```bash
+  yarn run start
+  ```
+
+- Navigate to [localhost:3001](http://localhost:3001) to see the frontend of the application.
