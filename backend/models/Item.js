@@ -47,12 +47,12 @@ ItemSchema.methods.updateFavoriteCount = function () {
   })
 }
 
-ItemSchema.methods.toJSONFor = function (user) {
+ItemSchema.methods.toJSONFor = function (user, item) {
   return {
     slug: this.slug,
     title: this.title,
     description: this.description,
-    image: this.image || defaulImage,
+    image: item ? this.image : defaulImage,
     createdAt: this.createdAt,
     updatedAt: this.updatedAt,
     tagList: this.tagList,
