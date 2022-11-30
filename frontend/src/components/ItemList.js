@@ -7,11 +7,11 @@ const ItemList = (props) => {
     return <div className="py-4">Loading...</div>;
   }
 
-  if (props.items?.lenght === 0) {
-    if (props.title?.lenght > 2) {
+  if (props.items?.length === 0) {
+    if (props.title?.length > 2) {
       return (
         <div id="empty" className="py-4">
-          <div className="d-flex flex-cloumn mt-4">
+          <div className="d-flex flex-column mt-4">
             <div className="d-flex justify-content-center mt-4">
               No items found for "<strong>{props.title}</strong>"
             </div>
