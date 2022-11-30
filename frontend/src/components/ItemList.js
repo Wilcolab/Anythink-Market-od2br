@@ -7,29 +7,40 @@ const ItemList = (props) => {
     return <div className="py-4">Loading...</div>;
   }
 
-  if (props.items.length === 0) {
-    return <div className="py-4 no-items">No items are here... yet.</div>;
-  }
-
-  return (
-    <div className="container py-2">
-      <div className="row">
-        {props.items.map((item) => {
-          return (
-            <div className="col-sm-4 pb-2" key={item.slug}>
-              <ItemPreview item={item} />
+  if (props.items?.lenght === 0) {
+    if (props.title?.lenght > 2) {
+      return (
+        <div id="empty" className="py-4">
+          <div className="d-flex flex-cloumn mt-4">
+            <div className="d-flex justify-content-center mt-4">
+              No items found for "<strong>{props.title}</strong>"
             </div>
-          );
-        })}
-      </div>
-
-      <ListPagination
-        pager={props.pager}
-        itemsCount={props.itemsCount}
-        currentPage={props.currentPage}
-      />
-    </div>
-  );
+          </div>
+        </div>
+      );
+    }
+    return <div className="py-4 no-items"> No items are here... yet.</div>;
+  }
 };
+
+return (
+  <div className="container py-2">
+    <div className="row">
+      {props.items.map((item) => {
+        return (
+          <div className="col-sm-4 pb-2" key={item.slug}>
+            <ItemPreview item={item} />
+          </div>
+        );
+      })}
+    </div>
+
+    <ListPagination
+      pager={props.pager}
+      itemsCount={props.itemsCount}
+      currentPage={props.currentPage}
+    />
+  </div>
+);
 
 export default ItemList;
