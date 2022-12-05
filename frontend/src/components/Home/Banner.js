@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../imgs/logo.png";
 import agent from "../../agent";
 
 const Banner = (props) => {
+  const [searchVisible, setSearchVisible] = useState(false);
   const onSearchChange = (event) => {
     props.onSearchFilter(
       event.target.value,
@@ -16,17 +17,26 @@ const Banner = (props) => {
         <img src={logo} alt="banner" />
         <div>
           <span>A place to </span>
-          <span id="get-part">get</span>
-          <form>
-            <input
-              style={{ width: "250px" }}
-              type="text"
-              placeholder="what is it that you truly desire"
-              name="term"
-              id="search-box"
-              onChange={onSearchChange}
-            />
-          </form>
+          <span
+            id="get-part"
+            onClick={() => {
+              setSearchVisible(true);
+            }}
+          >
+            get
+          </span>
+          {searchVisible && (
+            <form>
+              <input
+                style={{ width: "250px" }}
+                type="text"
+                placeholder="what is it that you truly desire"
+                name="term"
+                id="search-box"
+                onChange={onSearchChange}
+              />
+            </form>
+          )}
           <span> the cool stuff.</span>
         </div>
       </div>
