@@ -9,7 +9,7 @@ var Item = mongoose.model('Item');
 var Comment = mongoose.model('Comment');
 var User = mongoose.model('User');
 
-mongoose.connect('mongodb://mongodb-node:27017/anythink-market');
+mongoose.connect(MONGODB_URI);
 
 let userId;
 let itemId;
