@@ -74,6 +74,6 @@
   },
   "resolutions": {
     "autoprefixer": "10.4.5",
-    "styled-components": "^5"cd
+    "styled-components": "^5"
   }
 }
