@@ -38,7 +38,7 @@ const ItemPreview = (props) => {
     );
   } else {
       TOPSELLER = null;
-  
+  }
 
   return (
     <div
