@@ -29,6 +29,17 @@ const ItemPreview = (props) => {
     }
   };
 
+  let TOPSELLER;
+
+  item.seller.isVerified && item.seller.isVerified === true
+    ? (TOPSELLER = (
+        <div id="verified_seller_item" className="item-footer">
+          {" "}
+          <img alt="verified_seller" src="/verified_seller.svg" /> TOP SELLER
+        </div>
+      ))
+    : (TOPSELLER = null);
+
   return (
     <div
       className="card bg-dark border-light p-3"
@@ -54,6 +65,7 @@ const ItemPreview = (props) => {
               className="user-pic rounded-circle pr-1"
             />
           </Link>
+          {TOPSELLER}
           <button className="btn btn-outline-secondary" onClick={handleClick}>
             <i className="ion-heart"></i> {item.favoritesCount}
           </button>
