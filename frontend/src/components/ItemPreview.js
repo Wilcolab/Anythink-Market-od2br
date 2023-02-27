@@ -30,7 +30,6 @@ const ItemPreview = (props) => {
   };
 
   let TOPSELLER;
-
   if (item.seller.isVerified && item.seller.isVerified === true) {
     TOPSELLER = (
       <div id="item_verified_seller_item" className="item-footer">
@@ -38,8 +37,8 @@ const ItemPreview = (props) => {
       </div>
     );
   } else {
-      ßTOPSELLER = null;
-  }
+      TOPSELLER = null;
+  
 
   return (
     <div
