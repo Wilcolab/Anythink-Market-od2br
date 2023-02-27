@@ -31,14 +31,15 @@ const ItemPreview = (props) => {
 
   let TOPSELLER;
 
-  item.seller.isVerified && item.seller.isVerified === true
-    ? (TOPSELLER = (
-        <div id="verified_seller_item" className="item-footer">
-          {" "}
-          <img alt="verified_seller" src="/verified_seller.svg" /> TOP SELLER
-        </div>
-      ))
-    : (TOPSELLER = null);
+  if (item.seller.isVerified && item.seller.isVerified === true) {
+    TOPSELLER = (
+      <div id="item_verified_seller_item" className="item-footer">
+        <img alt="Verified Seller" src="verified_seller.svg"/> TOP SELLER
+      </div>
+    );
+  } else {
+      ßTOPSELLER = null;
+  }
 
   return (
     <div
